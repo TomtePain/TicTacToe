@@ -1,8 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 tr {
     width: 400px;
 }
 table {
     border-collapse: collapse;
+    margin-top: 100px;
 }
 
 td {
@@ -31,11 +38,11 @@ table tr td:last-child {
 }
 
 .container {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    position: relative;
 }
 
 .img-cross, .img-circle {
@@ -74,4 +81,98 @@ table tr td:last-child {
 
 .player-inactive {
     opacity: 0.5;
+}
+
+.horizontal-line {
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 350px;
+    position: absolute;
+    transform: scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.make-vertical {
+    transform: rotate(90deg) scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.make-diagonal {
+    transform: rotate(45deg) scaleX(0.0);
+    width: 400px;
+    transition: transform 225ms ease-in-out;
+}
+
+.make-diagonal-negative {
+    transform: rotate(-45deg) scaleX(0.0);
+    width: 400px;
+    transition: transform 225ms ease-in-out;
+}
+
+.game-over {
+    position: absolute;
+    top: 256px;
+    z-index: 1;
+    width: 400px;
+    animation: spin 1s ease-in-out;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.start-btn {
+    width: 200px;
+    height: 70px;
+    background-color: rgb(12, 12, 245);
+    color: white;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.start-btn:hover {
+    background-color: rgba(12, 12, 245, 0.692);
+}
+
+@media (max-width: 600px){
+    td {
+        width: 100px;
+        height: 100px;
+    }
+    .img-circle, .img-cross {
+        left: 10px;
+        top: 10px;
+    }
+    .game-over {
+        width: 300px;
+    }
+    .horizontal-line {
+        width: 300px !important;
+    }
+    #line-1 {
+        bottom: 262px !important;
+    }
+    #line-2 {
+        bottom: 156px !important;
+    }
+    #line-3 {
+        bottom: 46px !important;
+    }
+    #line-4 {
+        top: 254px !important;
+        right: 104px !important;
+    }
+    #line-6 {
+        top: 254px !important;
+        left: 106px !important;
+    }
+    #line-5, #line-7, #line-8 {
+        top: 254px !important;
+    }
 }

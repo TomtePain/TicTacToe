@@ -21,8 +21,19 @@
             Player 2 = <img src="img/cross.png">
         </div>
     </div>
+ 
+    <img class="game-over d-none" id="game-over" src="img/game-over.png">
+    
 
     <div class="container">
+        <div id="line-1" class="horizontal-line" style="bottom: 340px;"></div>
+        <div id="line-2" class="horizontal-line" style="bottom: 200px;"></div>
+        <div id="line-3" class="horizontal-line" style="bottom: 60px;"></div>
+        <div id="line-4" class="horizontal-line make-vertical" style="top: 305px; right: 170px;"></div>
+        <div id="line-5" class="horizontal-line make-vertical" style="top: 305px;"></div>
+        <div id="line-6" class="horizontal-line make-vertical" style="top: 305px; left: 175px;"></div>
+        <div id="line-7" class="horizontal-line make-diagonal" style="top: 305px;"></div>
+        <div id="line-8" class="horizontal-line make-diagonal-negative" style="top: 305px;"></div>
         <table>
             <tr>
                 <td onclick="fillShape(0)">
@@ -72,7 +83,7 @@
         </table>
     </div>
 
-
+    <button class="start-btn d-none" id="start-btn" onclick="reStart()">Restart</button>
 </body>
 
 </html>
