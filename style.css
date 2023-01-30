@@ -48,5 +48,30 @@ table tr td:last-child {
     left: 30px;
 }
 .d-none {
-    display: none;
+    display: none !important;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-container img {
+    width: 30px;
+    height: 30px;
+}
+
+.player {
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.player-inactive {
+    opacity: 0.5;
 }
